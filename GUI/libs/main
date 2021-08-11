@@ -1,0 +1,12 @@
+require.config({
+    baseUrl: 'libs',
+    paths : {
+      backbone : 'backbone',
+      underscore : 'underscore',
+      jquery : 'jquery',
+      marionette : 'backbone.marionette',
+      wreqr : 'backbone.wreqr',
+      eventbinder : 'backbone.eventbinder',
+      babysitter : 'backbone.babysitter'
+  } 
+});

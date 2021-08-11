@@ -3,17 +3,44 @@
     <head>
         <meta charset="utf-8">
         <title>Facebook Scraper</title>
-        <link rel="stylesheet" href="styles.css">
+        <link rel="stylesheet"  type = "text/css"href = "{{url_for('static', filename = 'styles.css')}}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
-        <script type="text/javascript" scr="./stuff.js"></script>
-        <!-- change the folder of the script -->
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+        <!-- submit button  script -->
+        <script type=text/javascript>
+                $(function() {
+
+                // Remember to check about the undefine condition
+    
+
+        
+                $('a#test').on('click', function(e,arg1,arg2) {
+                    var arg1 = document.querySelector('#dd1');
+                    arg1 = arg1.getElementsByTagName('div')[1];
+                    var arg2 = document.querySelector('#dd2');
+                    arg2 = arg2.getElementsByTagName('div')[1];
+                    console.log(arg1.id)
+                    console.log(arg2.id)
+
+                    e.preventDefault()
+                    if ((arg1.id == 'NULL') || (arg2.id == 'NULL'))
+                        window.alert('Select an option');
+                    else{
+                        $.getJSON('/scraping',{"location":arg1.id , "type":arg2.id},
+                            function(data) {
+                        });
+                    }
+                    return false;
+                });
+                });
+        </script>
     </head>
     <body>
         <header>
             <div class = "Logo">
-                <img src = "/GUI/images/facebook_logo2.png">
+                <img src = "{{url_for('static', filename = 'images/facebook_logo2.png')}}">
                 <h1 class = "Logo_Facebook"> Facebook Scraper</h1>
             </div>
             <section class = "main">
@@ -26,14 +53,13 @@
             </section>
         </header>
         <footer>
-            <button class ="Button1" id = "Send" method = "POST" ><strong>Send</strong></button>
+            <a href=# id=test><button class= "Button1" id = "Send">Test</button></a>
             <button class = "Button1" id = "Create"><strong>Create</strong></button>
         </footer>
-        <img src ="/GUI/images/LogoThirdRock.svg" class = "LogoThirdRock">
-        <script type="text/javascript" src="script.js"></script>
-        <script src="./require.js"></script>
-        <script src = "./stuff.js"></script>
-         
+        <img class = "LogoThirdRock"src = "{{url_for('static', filename = 'images/LogoThirdRock.svg')}}">
+        <script text = "text/javascript" src = "{{url_for('static', filename = 'script.js')}}"></script>
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+</script> 
 
     </body>
 

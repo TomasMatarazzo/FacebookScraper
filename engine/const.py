@@ -1,18 +1,18 @@
 estados = {
-    1: '282428275440465/',  # Alberta
-    2: 'vancouver/',  # Vancouver
-    3: 'winnipeg/',
-    4: '108188925868598/',
-    5: 'toronto/',
-    6: 'quebec/',
-    7: 'jacksonville/'
+    0: '282428275440465/',  # Alberta
+    1: 'vancouver/',  # Vancouver
+    2: 'winnipeg/',
+    3: '108188925868598/',
+    4: 'toronto/',
+    5: 'quebec/',
+    6: 'jacksonville/'
 }
 
 estados_excel = {
-    1:'Alberta/'
+    0:'Alberta/'
 }
 
 categories = {
-    1: 'propertyforsale/',
-    2: 'propertyrentals/'
+    0: 'propertyforsale/',
+    1: 'propertyrentals/'
 }

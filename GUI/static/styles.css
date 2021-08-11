@@ -202,7 +202,7 @@ footer{
     transition: 0.5s;
 }
 
-.Button{
+.Button, .Send{
     background-color:rgb(23,113,230);
     border-radius: 0.5em;
     padding: 1em;
@@ -228,9 +228,6 @@ footer{
     bottom: 15%;
 }
 
-#Send:hover{
-    background-color:green;
-}
 
 .Button{
     background-color:rgb(23,113,230);
@@ -238,7 +235,7 @@ footer{
 }
 
 #Create:hover{
-    background-color:lightblue;rgb(66, 74, 224);
+    background-color:lightblue;
 }
 
 #Send:hover{

@@ -19,7 +19,7 @@ function Dropdown(object){
 
         var value = this.options.val;
         var phrase = this.options.phrase;
-        var html = '<h2>' + phrase + '</h2>'+'<div class = "dropdown"><div class = "dropdown_value">'+ value + '</div>'
+        var html = '<h2>' + phrase + '</h2>'+'<div class = "dropdown"><div class = "dropdown_value" id = "NULL">'+ value + '</div>'
                         + '<div class = "dropdown_arrow"> ↧</div><div class = "dropdown_panel"><div class = "dropdown_items"></div></div>';
         this.element.innerHTML = html;
 
@@ -38,8 +38,8 @@ function Dropdown(object){
         //Populate dropdown items
         var data = this.options.data;
         var html = "";
-        data.forEach(element => {
-            html += '<div class = "dropdown_item" onmousedown =  "var self = getparent(this); self.clicked(this)"> '+ element +' </div>'
+        data.forEach((element,i) => {
+            html += '<div class = "dropdown_item" id = '+ i +' onmousedown =  "var self = getparent(this); self.clicked(this)"> '+ element +' </div>'
         });
         console.log(html);
         this.items.innerHTML = html;
@@ -62,6 +62,7 @@ function Dropdown(object){
 
         var newval = element.innerHTML;
         this.value.innerHTML = newval;
+        this.value.id = element.id;
     }
     this.show = function(){
         this.isVisible = true;
