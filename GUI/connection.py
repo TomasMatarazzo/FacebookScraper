@@ -7,7 +7,7 @@ scrape = Scraping()
 
 print(str(pathlib.Path(__file__).parent.parent.absolute()) + '\index.html')
 app = Flask(__name__ , template_folder='frontend', static_folder='static')
-ui = FlaskUI(app)
+ui = FlaskUI(app, width= 695)
 
 @app.route('/')
 def function():
@@ -28,5 +28,5 @@ def scraping():
 ui.run()
 
 if __name__ == '__main__':
-    app.run(debug = True)
+    app.run( host='127.0.0.1',debug = True)
 

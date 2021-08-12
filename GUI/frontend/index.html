@@ -3,10 +3,35 @@
     <head>
         <meta charset="utf-8">
         <title>Facebook Scraper</title>
+        <link rel = "shortcut icon" href = "{{url_for('static', filename = 'images/facebook_logo2.png') }}">
         <link rel="stylesheet"  type = "text/css"href = "{{url_for('static', filename = 'styles.css')}}">
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+        <script>
+            async function getRequest(url='') {
+                const response = await fetch(url, {
+                method: 'GET', 
+                cache: 'no-cache'
+                })
+                return response.json()
+            }
+            
+            document.addEventListener('DOMContentLoaded', function() {
+
+            let url = document.location
+            let route = "/flaskwebgui-keep-server-alive"
+            let interval_request = 3 * 1000 //sec
+
+            function keep_alive_server(){
+                getRequest(url + route)
+                .then(data => console.log(data))
+            }
+
+            setInterval(keep_alive_server, interval_request)()
+
+            })
+        </script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <!-- submit button  script -->
         <script type=text/javascript>

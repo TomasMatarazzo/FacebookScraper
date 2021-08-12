@@ -12,8 +12,14 @@ function createWindow () {
     }
   })
 
-  // and load the index.html of the app.
-  mainWindow.loadFile('index.html')
+  var python = require('child_process').spawn('py', ['./connection.py']);
+  python.stdout.on('data', function (data) {
+    console.log("data: ", data.toString('utf8'));
+  });
+  python.stderr.on('data', (data) => {
+    console.log(`stderr: ${data}`); // when error
+  });
+  mainWindow.loadFile('./frontend/index.html')
 
   // Open the DevTools.
   // mainWindow.webContents.openDevTools()

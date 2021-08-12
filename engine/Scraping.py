@@ -10,22 +10,16 @@ import random
 import pandas as pd
 from engine.const import estados, estados_excel, categories
 from engine.Extract import *
-import pathlib
+from pathlib import Path
 
 #Remember in case there is no category
 class Scraping:
 
     def __init__(self):
-        main_url = ""
-        url_excel = ""
-
-
-    def getExcelUrl(self):
-        pass
+        self.url = ""
 
 
     def FindPage(self, arg1, arg2):
-        global marketplace
 
         try:
             #Starting de chrome driver
@@ -74,28 +68,24 @@ class Scraping:
         try:
             # Going to the facebok marketplace
             #Here we select the location and filters
-
+            time.sleep(10)
             driver.get(marketplace)
+            time.sleep(10)
             i = arg1
             j = arg2
             state = estados[i]
             category = categories[j]
 
             url = marketplace + state + category
-            #+ arg1 + arg2
 
             a = datetime.datetime.now()
-            driver.get(url)
-
-
-            #URL FOR THE EXCEL
-            #self.getExcelUrl()
             url2 = str(a.strftime('%y-%m-%d-%H:%M:%S'))
-            url_excel = estados_excel[1] + arg2 + url2
-            url_excel = url_excel.replace('/','-')
-            url_excel = url_excel.replace(':','-')
+            url_excel = estados_excel[1] + state + url2
+            url_excel = url_excel.replace('/', '-')
+            url_excel = url_excel.replace(':', '-')
             print(url_excel)
 
+            driver.get(url)
         except:
             print("Error3")
 
@@ -103,7 +93,7 @@ class Scraping:
             #Searching all the elements and saving it on a list
             time.sleep(random.randint(1,3))
 
-            n_scrolls = 2;
+            n_scrolls = 2
 
             print(marketplace + 'item/')
             for n in range(1,n_scrolls):
@@ -122,7 +112,7 @@ class Scraping:
         i = 1
         for e in elements:
             i = i + 1
-            if i < 10 :
+            if i < 5 :
                 info.append(self.Extract(e,driver))
                 print('-----\n')
             else:
@@ -195,14 +185,12 @@ class Scraping:
             location = driver.find_element(By.CSS_SELECTOR, "div[class = 'profileMapTile']")
             image = location.value_of_css_property('background-image')
             image = image[4:-1]
-
+            print(information)
             return information
 
-    def createExcel( dic ):
+    def createExcel(self,info):
 
             #Create the folder where you will put the paths.
-            df = pd.DataFrame( dic )
-            print(url2)
-            df.to_excel(url_excel +'.xlsx')
-            print(df.head())
-
+            df = pd.DataFrame(info)
+            temp = str(Path(__file__).parent.absolute())
+            df.to_excel(temp + '.xlsx')
