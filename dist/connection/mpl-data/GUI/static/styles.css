@@ -1,0 +1,309 @@
+/* ----------------------------------------------------
+: Site Colors : 
+background ... #CCC;
+
+: Table Of Contents :
+Resets
+Defaults
+Typography
+Forms
+Layout
+Links
+Menus
+Global Classes
+Content
+---------------------------------------------------- */
+*{
+    font-family: 'Poppins' , sans-serif;
+}
+/* -------------------- Resets --------------------- */
+body, form, fieldset, ol, ul, li, h1, h2, h3, h4, h5, h6, p {
+    margin:0;
+    padding:0;
+    }
+    img {
+    border:0; /* kills Gecko bug when img's are placed inside links */
+    vertical-align:bottom; /* set vertical align to bottom for IE */
+    }
+    /* ------------------- Defaults ------------------- */
+    html {
+    height:100%; 
+    overflow:auto; /* triggers 100% height in Opera 9.5 */
+    overflow-y:scroll; /* creates a horizontal scrollbar, for a more consistent look & feel */
+    }
+    body {
+    height:100%; /* helps make height 100% */
+    font-family: 'Poppins', sans-serif; /* 100% = 16px, 93.75% = 15px, 87.5% = 14px, 81.25% = 13px, 75% = 12px - font-size in % prevents IE's resize bug */
+    background:#fdfdfdd5;
+    color:#333;
+    }
+    /* ------------------ Typography ------------------- */
+    h1, h2, h3, h4, h5, h6, p {
+    margin:0 0 1em;
+    }
+    p, ul, ol {
+    font-size:1em;
+    }
+    ul {
+    margin:0 0 1em 25px;
+    list-style:none;
+    }
+    h1 {font-size:2.5em;}
+    h2 {font-size:1.5em;}
+    h3 {font-size:1.4em;}
+    h4 {font-size:1.3em;}
+    h5 {font-size:1.2em;}
+    h6 {font-size:1.1em;}
+    /* -------------------- Forms ---------------------- */
+    fieldset {
+    border:none;
+    }
+    form :focus {
+    outline:0; /* removes Safari's blue border */
+    }  
+    input, select, textarea {
+    font-size:1em;
+    font-family:Arial, Helvetica, sans-serif;
+    }
+    label {
+    cursor:pointer;
+    vertical-align:middle;
+    }
+    input {
+    vertical-align:middle;
+    }
+    textarea { 
+    overflow:auto; /* removes scrollbar from IE when none is needed */
+    width: 95%;
+    }	
+    /* -------------------- Layout --------------------- */
+    #wrap {
+    margin:0 auto; /* centers layout */
+    min-height:100%; /* height 100% in all modern browsers */
+    }
+    #head {
+    }
+    #nav {
+    }
+    #content {
+    }
+    #left {
+    float:left;
+    }
+    #foot {
+    clear:both;
+    }
+    /* ------------------- Links ---------------------- */
+    a {
+    text-decoration:underline;
+    color:#000;
+    outline:0; /* removes dotted border */
+    }
+    a:visited {
+    color:#999;
+    }
+    a:hover, a:focus, a:active {
+    text-decoration:none;
+    /* add-custom:outline-rule-here; */
+    }
+    /* --------------------- Menus -------------------- */
+    /* Main Menu */
+    #nav {
+    }
+    #nav li {
+    }
+    #nav a {
+    text-decoration:none;
+    }
+    #nav a:hover, #nav a:focus, #nav a:active {
+    }
+    /* Foot Menu */
+    #foot ul {
+    }
+    #foot li {
+    }
+    #foot a {
+    text-decoration:none;
+    }
+    #foot a:hover, #foot a:focus, #foot a:active {
+    }
+    /* ---------------- Global Classes --------------- */
+    .clear {
+    clear:both;
+    line-height:0;
+    height:0;
+    font-size:0;
+    }
+    .clearfix:after {
+    content:" "; 
+    display:block; 
+    height:0;
+    font-size:0; 
+    clear:both; 
+    visibility:hidden;
+    }
+    .clearfix {display:inline-block;}
+    /* mac hide \*/
+    * html .clearfix {height:1%;}
+    .clearfix {display:block;}
+    /* End hide */
+    /* ------------------- Content ------------------- */
+
+header{
+    height: 80%;
+    max-height: 550px;
+
+}
+
+body{
+    background-color: rgb(54,157,232);
+    margin:0 3em;
+    color:rgba(240, 248, 255, 0.986);
+}
+
+img{
+    max-width: 150%;
+    max-height: 150%;
+}
+
+.Logo{
+    display: flex;
+    height: 10%;
+    margin: 1em 3em 3em 3em;
+    justify-content: baseline;
+    align-items: center;
+}
+
+.Logo_Facebook{
+    margin-left: 1.2em;
+    justify-self: center;
+    margin-top: 1em;
+}
+
+section{
+    height: 60%;
+    width:60%
+}
+
+section > *{
+    margin: 2em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+footer{
+    display: flex;
+    margin-left: 6em;
+    min-width: 320px;
+    max-height: 150px;
+    height: 10%;
+    align-items: center;
+    transition: 0.5s;
+}
+
+.Button, .Send{
+    background-color:rgb(23,113,230);
+    border-radius: 0.5em;
+    padding: 1em;
+    padding-left: 3em;
+}
+
+.Button1{
+    padding: 1em 3.3em;
+    margin: 0 1em;
+    border-color: none;
+    border: none;
+    border-radius: 0.5em;
+    cursor: pointer;
+    background-color: rgb(23,113,230);
+    font-size: 1em;
+    font-weight: 800;
+}
+
+.LogoThirdRock{
+    position: absolute;
+    height: 15%;
+    right: 5%;
+    bottom: 15%;
+}
+
+
+.Button{
+    background-color:rgb(23,113,230);
+    min-width:400px ;
+}
+
+#Create:hover{
+    background-color:lightblue;
+}
+
+#Send:hover{
+    background-color:greenyellow;
+}
+
+
+.dropdown{
+    background-color: white;
+    width: 95%;
+    user-select:none;
+    cursor:pointer;
+    position: relative;
+}
+
+.dropdown_value{
+    display: inline-block;
+    padding-left: 0.3em;
+    font-weight: 700;
+    color: #000;
+}
+
+.dropdown_arrow{
+    position:absolute;
+    right: 0.3em;
+    top:0em;
+    font-size: 1em;
+    font-weight: 700;
+    color:black;
+    transition: all 0.3s ease;
+}
+
+.dropdown_panel{
+    position: absolute;
+    color : #000;
+    font-weight: 700;
+    width: calc(100%);
+    height: 100%;
+    background: none;
+    overflow: hidden;
+}
+
+.dropdown_items{
+    position:absolute;
+    overflow-y: auto;
+    background: aliceblue;
+    width: 100%;
+    max-height: 100%;
+    transform: translate(0, -100%);
+    transition: 0.5s all ease-out;
+
+}
+
+.dropdown_item:hover{
+    background: #999;
+}
+
+@media screen and (max-width: 1000px) {
+    .LogoThirdRock{
+        visibility:  hidden;
+    }
+    .footer{
+        margin-left:3em;
+    }
+}
+
+@media screen and (max-height: 600px){
+    header{
+        height: 100%;
+    }
+}
+
